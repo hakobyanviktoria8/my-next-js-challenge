@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Banner from "../components/Banner";
 import SmallCard from "../components/SmallCard";
 import MediumCard from "../components/MediumCard";
+import Breadcrumbs from "nextjs-breadcrumbs";
 
 export default function Home({exploreData, cardsData}) {
     return (
@@ -16,6 +17,9 @@ export default function Home({exploreData, cardsData}) {
             <Header/>
             {/*banner*/}
             <Banner/>
+
+            {/*breadCrumbs*/}
+            <Breadcrumbs/>
 
             <main className="max-w-7xl mx-auto px-8 sm:px-16">
                 <section className="pt-6">
