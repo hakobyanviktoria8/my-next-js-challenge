@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Header from "../components/Header";
 
 export default function Home() {
   return (
@@ -8,7 +9,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
+        {/*header*/}
+        <Header/>
+        {/*banner*/}
+      {/*<main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
         <h1 className="text-6xl font-bold">
           Welcome to{' '}
           <a className="text-blue-600" href="https://nextjs.org">
@@ -65,7 +69,6 @@ export default function Home() {
           </a>
         </div>
       </main>
-
       <footer className="flex items-center justify-center w-full h-24 border-t">
         <a
           className="flex items-center justify-center"
@@ -76,7 +79,7 @@ export default function Home() {
           Powered by{' '}
           <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
         </a>
-      </footer>
+      </footer>*/}
     </div>
   )
 }
