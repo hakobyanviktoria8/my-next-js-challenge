@@ -1,18 +1,43 @@
 import Head from 'next/head'
 import Header from "../components/Header";
+import Banner from "../components/Banner";
+import SmallCard from "../components/SmallCard";
+import MediumCard from "../components/MediumCard";
 
-export default function Home() {
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+export default function Home({exploreData, cardsData}) {
+    return (
+        <div className="">
+            <Head>
+                <title>Create Next App</title>
+                <link rel="icon" href="/favicon.ico"/>
+            </Head>
 
-        {/*header*/}
-        <Header/>
-        {/*banner*/}
-      {/*<main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
+            {/*header*/}
+            <Header/>
+            {/*banner*/}
+            <Banner/>
+
+            <main className="max-w-7xl mx-auto px-8 sm:px-16">
+                <section className="pt-6">
+                    <h2 className="text-4xl font-semibold pb-5">Explore Nearby</h2>
+                    {console.log("hi", exploreData)}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                        {exploreData?.map((item, id) => (
+                            <SmallCard item={item} key={id}/>
+                        ))}
+                    </div>
+                </section>
+                <section>
+                    <h2 className="text-4xl font-semibold py-8">Live Anywhere</h2>
+                    <div className="flex space-x-3 overflow-scroll
+                    scrollbar-hide p-3 -ml-3">
+                        {cardsData?.map((item, id) =>
+                            <MediumCard item={item} key={id}/>)
+                        }
+                    </div>
+                </section>
+            </main>
+            {/*<main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
         <h1 className="text-6xl font-bold">
           Welcome to{' '}
           <a className="text-blue-600" href="https://nextjs.org">
@@ -80,6 +105,22 @@ export default function Home() {
           <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
         </a>
       </footer>*/}
-    </div>
-  )
+        </div>
+    )
+}
+
+
+export async function getStaticProps() {
+    const exploreData = await fetch("https://links.papareact.com/pyp").then(
+        (res) => res.json()
+    );
+    const cardsData = await fetch("https://links.papareact.com/zp1").then(
+        (res) => res.json()
+    )
+    return {
+        props: {
+            exploreData,
+            cardsData
+        }
+    }
 }
