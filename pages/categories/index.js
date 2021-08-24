@@ -1,7 +1,7 @@
 import React from "react";
 import Breadcrumbs from "nextjs-breadcrumbs";
 
-const Article = () => {
+const Categories = () => {
     return (
         <div>
             <Breadcrumbs/>
@@ -9,4 +9,4 @@ const Article = () => {
     )
 };
 
-export default Article
+export default Categories
