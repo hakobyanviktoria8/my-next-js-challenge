@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import {SearchIcon,GlobeAltIcon,MenuIcon,UserCircleIcon,UserIcon} from '@heroicons/react/solid'
+import {SearchIcon, GlobeAltIcon, MenuIcon, UserCircleIcon, UserIcon} from '@heroicons/react/solid'
 
 const Header = () => {
     return (

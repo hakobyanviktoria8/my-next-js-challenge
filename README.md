@@ -30,3 +30,10 @@ Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&ut
 
 ##Day 2
 useful Nextjs chalange: https://www.youtube.com/watch?v=BbilqOBOfg8
+
+
+
+##use in project
+Tailwind
+Nextjs 
+Vercel
